@@ -6,10 +6,7 @@ angular.module('video-player')
       index: '<'
     },
     templateUrl: 'src/templates/videoListEntry.html',
-    controller: function() {
-      debugger;
-    // this.img = this.video.snippet.thumbnails.default.url
-    // console.log(this);
+    controller: function () {
     }
 
   });

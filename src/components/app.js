@@ -1,17 +1,30 @@
 angular.module('video-player')
 
   .component('app', {
-    controller: function() {
-      this.video = window.exampleVideoData[0];
+    controller: function (youTube) {
+      this.key = window.YOUTUBE_API_KEY;
+      this.video = exampleVideoData[0];
+      this.videos = window.exampleVideoData;
 
-      this.selectVideo = () => {};
+      this.selectVideo = () => { };
 
-      this.exampleVideoData = window.exampleVideoData;
+      this.updateVideos = (videos) => {
+        this.video = videos[0];
+        this.videos = videos;
+      }
+
+      this.searchOnClick = (query) => {
+        youTube.search({ query: query, maxResults: 5, key: this.key },
+          this.updateVideos
+        )
+      }
 
       this.onClick = (index) => {
-        console.log(index, ' clicked video!');
-        return {};
+        this.video = exampleVideoData[index]
       };
+
+
+
     },
     templateUrl: 'src/templates/app.html'
   });
