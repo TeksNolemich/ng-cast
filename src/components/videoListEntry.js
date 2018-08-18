@@ -7,6 +7,7 @@ angular.module('video-player')
     },
     templateUrl: 'src/templates/videoListEntry.html',
     controller: function() {
+      debugger;
     // this.img = this.video.snippet.thumbnails.default.url
     // console.log(this);
     }

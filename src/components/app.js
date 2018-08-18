@@ -2,9 +2,13 @@ angular.module('video-player')
 
   .component('app', {
     controller: function() {
+      this.video = window.exampleVideoData[0];
+
       this.selectVideo = () => {};
+
       this.exampleVideoData = window.exampleVideoData;
-      this.onClick = function (index) {
+
+      this.onClick = (index) => {
         console.log(index, ' clicked video!');
         return {};
       };
